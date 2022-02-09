@@ -9,23 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var textField1: UITextField!
-    @IBOutlet private weak var textField2: UITextField!
+    @IBOutlet private weak var taxExcludedTextField: UITextField!
+    @IBOutlet private weak var taxRateTextField: UITextField!
     @IBOutlet private weak var resultLabel: UILabel!
 
+    private let taxRateKey = "taxRate"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let text2 = UserDefaults.standard.string(forKey: "key") {
-            textField2.text = text2
+        if let taxRate = UserDefaults.standard.string(forKey: taxRateKey) {
+            taxRateTextField.text = taxRate
         }
     }
 
 
     @IBAction func calculateButton(_ sender: Any) {
-        UserDefaults.standard.set(textField2.text, forKey: "key")
-        guard let taxExcluded = Float(textField1.text ?? ""),
-              let taxRate = Float(textField2.text ?? "")  else { return }
+        UserDefaults.standard.set(taxRateTextField.text, forKey: taxRateKey)
+        guard let taxExcluded = Float(taxExcludedTextField.text ?? ""),
+              let taxRate = Float(taxRateTextField.text ?? "") else { return }
         let amountIncludingTax = Int(taxExcluded + taxExcluded * (taxRate * 0.01))
         resultLabel.text = "\(amountIncludingTax)円"
     }
