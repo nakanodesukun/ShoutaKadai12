@@ -85,8 +85,8 @@
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="ZRj-rE-IgL" id="1Qb-ja-VSG"/>
-                        <outlet property="textField1" destination="UCD-Ai-3xv" id="3Lz-uV-Swv"/>
-                        <outlet property="textField2" destination="b8h-K6-9GY" id="XmK-g8-MHG"/>
+                        <outlet property="taxExcludedText" destination="UCD-Ai-3xv" id="3Lz-uV-Swv"/>
+                        <outlet property="taxRateText" destination="b8h-K6-9GY" id="XmK-g8-MHG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
